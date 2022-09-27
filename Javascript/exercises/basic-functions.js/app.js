@@ -45,15 +45,30 @@ console.log(findLongestWord(avengers));
  ***********************************/
 
 // Calcular una suma puede ser tan simple como iterar sobre un array y sumar cada uno de los elementos.
-// Implemente la función denominada sumNumbers que toma un array de números como argumento y devuelve la suma de todos los números de la matriz. 
+// Implemente la función denominada sumNumbers que toma un array de números como argumento y devuelve la suma de todos los números de la matriz.
 
-const numbers = [1, 2, 3, 5, 45, 37, 58];
+let numbers = [1, 2, 3, 5, 45, 37, 58];
 
 function sumAll(param) {
-    let result = 0;
+  let result = 0;
   for (const iterator of param) {
     result += iterator;
   }
   return result;
 }
 console.log(sumAll(numbers));
+
+/************************************
+ * Iteración #4: Calcular el promedio *
+ ***********************************/
+
+numbers = [12, 21, 38, 5, 45, 37, 6];
+function average(param) {
+  let sum = 0;
+  for (const iterator of param) {
+    sum += iterator;
+  }
+
+  return sum / param.length;
+}
+console.log(average(numbers));
