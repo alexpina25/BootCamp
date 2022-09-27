@@ -151,3 +151,30 @@ function finderName(param, searchedValue) {
 
 console.log(finderName(nameFinder, "Tony"));
 console.log(finderName(nameFinder, "Alex"));
+
+/************************************
+ * Iteration #8: Contador de repeticiones *
+ ***********************************/
+// Crea una función que nos devuelva el número de veces que se repite cada una de las palabras que lo conforma.
+const counterWords = [
+  "code",
+  "repeat",
+  "eat",
+  "sleep",
+  "code",
+  "enjoy",
+  "sleep",
+  "code",
+  "enjoy",
+  "upgrade",
+  "code",
+];
+function repeatCounter(param) {
+  const arrayWithoutRepeated = {};
+
+  for (const iterator of param) {
+    arrayWithoutRepeated[iterator] = arrayWithoutRepeated[iterator] + 1 || 1;
+  }
+  return arrayWithoutRepeated;
+}
+console.log(repeatCounter(counterWords));
