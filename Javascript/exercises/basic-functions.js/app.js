@@ -82,11 +82,42 @@ function averageWord(param) {
   let result = 0;
   for (const iterator of param) {
     if (typeof iterator === "string") {
-        result += iterator.length;
+      result += iterator.length;
     } else {
-        result += iterator;
+      result += iterator;
     }
   }
   return result;
 }
 console.log(averageWord(mixedElements));
+
+/************************************
+ * Iteración #6: Valores únicos *
+ ***********************************/
+// Crea una función que reciba por parámetro un array y compruebe si existen elementos duplicados,
+// en caso que existan los elimina para retornar un array sin los elementos duplicados.
+const duplicates = [
+  "sushi",
+  "pizza",
+  "burger",
+  "potatoe",
+  "pasta",
+  "ice-cream",
+  "pizza",
+  "chicken",
+  "onion rings",
+  "pasta",
+  "soda",
+];
+function removeDuplicates(param) {
+  const arrayWithoutDuplicates = [];
+
+  for (const iterator of param) {
+    if (!arrayWithoutDuplicates.includes(iterator)) {
+        arrayWithoutDuplicates.push(iterator);
+    }
+  }
+
+  return arrayWithoutDuplicates;
+}
+console.log(removeDuplicates(duplicates));
