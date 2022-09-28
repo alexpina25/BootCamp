@@ -185,10 +185,10 @@ for (let index = 0; index <= 9; index++) {
 //   Este bucle empieza en 0 y termina en 10.
 //   Muestra por consola un mensaje diciendo 'Intentando dormir' en cada vuelta del bucle
 //   y cambia el mensaje en la última vuelta a 'Dormido!'.
-for (let index = 0; index <= 10; index++) {
-  if (index == 10) {
-    console.log("Dormido!");
+for (let index = 0; index < 10; index++) {
+  if (index == 9) {
+    console.log("Dormido!", index);
   } else {
-    console.log("Intentando dormir");
+    console.log("Intentando dormir", index);
   }
 }
