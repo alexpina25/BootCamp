@@ -99,7 +99,28 @@ favSoundsArray = favSoundsArray.flat();
 
 for (const iterator of favSoundsArray) {
   favSoundsArray[iterator] = favSoundsArray[iterator] + 1 || 1;
-  
 }
 console.log(favSoundsArray);
 
+/************************************
+ * TODO: Me hace chocapic el enunciado
+ * Iteración #4: Métodos findArrayIndex *
+ ***********************************/
+// Crea una función llamada findArrayIndex que reciba como parametros un array de textos y un texto
+// y devuelve la posición del array cuando el valor del array sea igual al valor del texto que enviaste como parametro. Haz varios ejemplos y compruebalos.
+const texts = ["Caracol", "Mosquito", "Salamandra", "Ajolote"];
+
+const findArrayIndex = (array, text) => {
+return null;
+}
+console.log(findArrayIndex(texts, "Mosquito"));
+
+/************************************
+ * Iteración #5: Función rollDice *
+ ***********************************/
+// Crea una función llamada rollDice() que reciba como parametro el numero de caras que queramos que tenga el dado
+// que deberá simular el codigo dentro de la función. Como hemos dicho, que la función use el parametro para simular una tirada de dado y retornar el resultado.
+const rollDice = (faces) => {
+  return  parseInt(Math.random() * (faces - 1) + 1);
+}
+console.log(rollDice(6));
