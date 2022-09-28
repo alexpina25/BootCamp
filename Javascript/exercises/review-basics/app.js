@@ -111,8 +111,8 @@ console.log(favSoundsArray);
 const texts = ["Caracol", "Mosquito", "Salamandra", "Ajolote"];
 
 const findArrayIndex = (array, text) => {
-return null;
-}
+  return null;
+};
 console.log(findArrayIndex(texts, "Mosquito"));
 
 /************************************
@@ -121,6 +121,28 @@ console.log(findArrayIndex(texts, "Mosquito"));
 // Crea una función llamada rollDice() que reciba como parametro el numero de caras que queramos que tenga el dado
 // que deberá simular el codigo dentro de la función. Como hemos dicho, que la función use el parametro para simular una tirada de dado y retornar el resultado.
 const rollDice = (faces) => {
-  return  parseInt(Math.random() * (faces - 1) + 1);
-}
+  return parseInt(Math.random() * (faces - 1) + 1);
+};
 console.log(rollDice(6));
+
+/************************************
+ * Iteración #6: Función swap *
+ ***********************************/
+// Crea una función llamada swap() que reciba un array y dos parametros que sean indices del array.
+// La función deberá intercambiar la posición de los valores de los indices que hayamos enviado como parametro. Retorna el array resultante.
+const array = [
+  "Mesirve",
+  "Cristiano Romualdo",
+  "Fernando Muralla",
+  "Ronalguiño",
+];
+
+const swap = (array, index1, index2) => {
+  const memory = array[index1];
+
+  array[index1] = array[index2];
+  array[index2] = memory;
+
+  return array;
+};
+console.log(swap(array, 0, 3));
