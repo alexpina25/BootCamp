@@ -74,7 +74,7 @@ console.log(copiedArray);
 //  3.2 Dado el siguiente objeto, crea una copia usando spread operators.
 let toy = { name: "Bus laiyiar", date: "20-30-1995", color: "multicolor" }; //**Cambio por let para rehusar la variable */
 
-const copiedToy = {...toy};
+const copiedToy = { ...toy };
 console.log(copiedToy);
 
 //  3.3 Dado los siguientes arrays, crea un nuevo array juntandolos usando
@@ -90,7 +90,7 @@ console.log(concatedArrays);
 toy = { name: "Bus laiyiar", date: "20-30-1995", color: "multicolor" };
 const toyUpdate = { lights: "rgb", power: ["Volar like a dragon", "MoonWalk"] };
 
-const concatedToys = {...toy, ...toyUpdate};
+const concatedToys = { ...toy, ...toyUpdate };
 console.log(concatedToys);
 
 //  3.5 Dado el siguiente array. Crear una copia de él eliminando la posición 2
@@ -99,3 +99,48 @@ const colors = ["rojo", "azul", "amarillo", "verde", "naranja"];
 
 const copiedColors = [colors[0], colors[1], ...colors.slice(3)];
 console.log(copiedColors);
+
+/************************************
+ * Iteración #4: Map *
+ ***********************************/
+/* 4.1 Dado el siguiente array, devuelve un array con sus nombres 
+ utilizando .map(). */
+let users = [
+  { id: 1, name: "Abel" },
+  { id: 2, name: "Julia" },
+  { id: 3, name: "Pedro" },
+  { id: 4, name: "Amanda" },
+];
+
+const arrayUsers = users.map((user) => user.name);
+console.log(arrayUsers);
+
+/*  4.2 Dado el siguiente array, devuelve una lista que contenga los valores 
+ de la propiedad .name y cambia el nombre a 'Anacleto' en caso de que 
+ empiece por 'A'. */
+users = [
+  { id: 1, name: "Abel" },
+  { id: 2, name: "Julia" },
+  { id: 3, name: "Pedro" },
+  { id: 4, name: "Amanda" },
+];
+
+const listUsers = users.map((user) =>
+  user.name.startsWith("A") ? "Anacleto" : user.name
+);
+console.log(listUsers);
+
+/*  4.3 Dado el siguiente array, devuelve una lista que contenga los valores 
+ de la propiedad .name y añade al valor de .name el string ' (Visitado)' 
+ cuando el valor de la propiedad isVisited = true. */
+const cities = [
+  { isVisited: true, name: "Tokyo" },
+  { isVisited: false, name: "Madagascar" },
+  { isVisited: true, name: "Amsterdam" },
+  { isVisited: false, name: "Seul" },
+];
+
+const listCities = cities.map((city) =>
+  city.isVisited ? `${city.name} - (Visitado)` : city.name
+);
+console.log(listCities);
