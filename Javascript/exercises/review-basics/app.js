@@ -103,7 +103,6 @@ for (const iterator of favSoundsArray) {
 console.log(favSoundsArray);
 
 /************************************
- * TODO: Me hace chocapic el enunciado
  * Iteración #4: Métodos findArrayIndex *
  ***********************************/
 // Crea una función llamada findArrayIndex que reciba como parametros un array de textos y un texto
@@ -111,9 +110,15 @@ console.log(favSoundsArray);
 const texts = ["Caracol", "Mosquito", "Salamandra", "Ajolote"];
 
 const findArrayIndex = (array, text) => {
-  return null;
+  for (const iterator of array) {
+    if (iterator === text) {
+      return array.indexOf(iterator);
+    }
+  }
 };
 console.log(findArrayIndex(texts, "Mosquito"));
+console.log(findArrayIndex(texts, "Caracol"));
+console.log(findArrayIndex(texts, "Mesirve"));
 
 /************************************
  * Iteración #5: Función rollDice *
