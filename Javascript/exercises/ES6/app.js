@@ -57,9 +57,45 @@ console.log(`${name}-${race}`);
  y comprueba que todo esta bien imprimiendolo. */
 
 const car = { name: "Mazda 6", itv: [2015, 2011, 2020] };
-const {name: carName, itv: itvs} = car;
+const { name: carName, itv: itvs } = car;
 const [itv1, itv2, itv3] = itvs;
 
 console.log(`${carName} // ${itv1}-${itv2}-${itv3}`);
 
+/************************************
+ * Iteración #3: Spread Operator *
+ ***********************************/
+//  3.1 Dado el siguiente array, crea una copia usando spread operators.
+let pointsList = [32, 54, 21, 64, 75, 43]; //**Cambio por let para rehusar la variable */
 
+const copiedArray = [...pointsList];
+console.log(copiedArray);
+
+//  3.2 Dado el siguiente objeto, crea una copia usando spread operators.
+let toy = { name: "Bus laiyiar", date: "20-30-1995", color: "multicolor" }; //**Cambio por let para rehusar la variable */
+
+const copiedToy = {...toy};
+console.log(copiedToy);
+
+//  3.3 Dado los siguientes arrays, crea un nuevo array juntandolos usando
+//  spread operatos.
+pointsList = [32, 54, 21, 64, 75, 43];
+const pointsLis2 = [54, 87, 99, 65, 32];
+
+const concatedArrays = [...pointsList, ...pointsLis2];
+console.log(concatedArrays);
+
+//  3.4 Dado los siguientes objetos. Crea un nuevo objeto fusionando los dos
+//  con spread operators.
+toy = { name: "Bus laiyiar", date: "20-30-1995", color: "multicolor" };
+const toyUpdate = { lights: "rgb", power: ["Volar like a dragon", "MoonWalk"] };
+
+const concatedToys = {...toy, ...toyUpdate};
+console.log(concatedToys);
+
+//  3.5 Dado el siguiente array. Crear una copia de él eliminando la posición 2
+//  pero sin editar el array inicial. De nuevo, usando spread operatos.
+const colors = ["rojo", "azul", "amarillo", "verde", "naranja"];
+
+const copiedColors = [colors[0], colors[1], ...colors.slice(3)];
+console.log(copiedColors);
