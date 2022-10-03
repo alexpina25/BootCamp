@@ -14,4 +14,3 @@ function recoverC(list) {
 recoverC(elements);
 recoverC(elementsList);
 
-
