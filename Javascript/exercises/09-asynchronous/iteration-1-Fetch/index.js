@@ -44,10 +44,12 @@ button.addEventListener("click", async () => {
   console.log(country);
 
   for (const iterator of country) {
-    const li = `<li>El nombre ${name} tiene un ${iterator.probability} por ciento de ser ${iterator.country_id}</li>`;
+    const li = `<li>El nombre ${name} tiene un ${iterator.probability} por ciento de ser ${iterator.country_id} <button class="delete-btn">x</button></li>`;
 
     ul.innerHTML += li;
   }
+
+  removeButtons();
 });
 
 /* 
@@ -55,3 +57,17 @@ button.addEventListener("click", async () => {
 a la api que diga...'El nombre X tiene un Y porciento de ser de Z' etc etc.
 EJ: El nombre Pepe tiene un 22 porciento de ser de ET y un 6 porciento de ser 
 de MZ. */
+
+/* 2.4 En base al ejercicio anterior, crea un botón con el texto 'X' para cada uno 
+de los p que hayas insertado y que si el usuario hace click en este botón 
+eliminemos el parrafo asociado. */
+
+const removeButtons = () => {
+  const deleteBtns = document.querySelectorAll(".delete-btn");
+
+  for (const button of deleteBtns) {
+    button.addEventListener("click", () => {
+      button.parentElement.remove();
+    });
+  }
+};
