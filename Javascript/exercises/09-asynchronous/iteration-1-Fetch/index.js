@@ -24,7 +24,7 @@ const getData2 = async (name) => {
   try {
     const rawData = await fetch(`https://api.nationalize.io?name=${name}`);
     const jsonData = await rawData.json();
-    console.log(jsonData);
+    return jsonData;
   } catch (error) {
     console.log(error);
   }
@@ -33,8 +33,25 @@ const getData2 = async (name) => {
 const input = document.querySelector("input");
 const button = document.querySelector("button");
 
-button.addEventListener("click", () => {
-  console.log(input)
-  console.log(input.value)
-  getData2(input.value);
+const ul = document.createElement("ul");
+document.body.appendChild(ul);
+
+button.addEventListener("click", async () => {
+  const data = await getData2(input.value);
+  console.log(data);
+
+  const { country, name } = data;
+  console.log(country);
+
+  for (const iterator of country) {
+    const li = `<li>El nombre ${name} tiene un ${iterator.probability} por ciento de ser ${iterator.country_id}</li>`;
+
+    ul.innerHTML += li;
+  }
 });
+
+/* 
+2.3 En base al ejercicio anterior. Crea dinamicamente un elemento  por cada petición 
+a la api que diga...'El nombre X tiene un Y porciento de ser de Z' etc etc.
+EJ: El nombre Pepe tiene un 22 porciento de ser de ET y un 6 porciento de ser 
+de MZ. */
